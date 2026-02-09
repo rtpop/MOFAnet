@@ -36,7 +36,7 @@ surv_association <- function(factors, surv, univariate = TRUE) {
   }
 
   # subset to only samples that have survival data
-  factors <- factors[samples, ]
+  factors <- factors[samples, , drop = FALSE]
   surv <- surv[which(surv$sample_id %in% samples), ]
   surv <- surv[!duplicated(surv$sample_id), ]
 
